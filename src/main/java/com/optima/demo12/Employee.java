@@ -25,6 +25,5 @@ public class Employee {
     private String password;
     @Column(name = "date")
     private String date;
-    // Getters and setters
-    // ...
+
 }
