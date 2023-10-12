@@ -24,4 +24,8 @@ public class Task {
 
     @Column(name = "status")
     private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "employee_id")
+    private Employee assignedTo;
 }

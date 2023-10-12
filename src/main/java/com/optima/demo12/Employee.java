@@ -1,8 +1,9 @@
 package com.optima.demo12;
 
 
-
 import jakarta.persistence.*;
+
+import java.util.List;
 
 @Entity
 @Table(name = "employee")
@@ -25,5 +26,15 @@ public class Employee {
     private String password;
     @Column(name = "date")
     private String date;
+
+
+    @ManyToOne
+    @JoinColumn(name = "department_id")
+    private Departement department;
+
+    // An employee can have many tasks
+    @OneToMany(mappedBy = "assignedTo")
+    private List<Task> tasks;
+
 
 }

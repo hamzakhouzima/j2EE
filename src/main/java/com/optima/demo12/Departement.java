@@ -1,6 +1,7 @@
 package com.optima.demo12;
 import jakarta.persistence.*;
 
+import java.util.List;
 
 
 @Entity
@@ -21,5 +22,6 @@ public class Departement {
     @Column(name = "departement_boss")
     private String maintenance_date;
 
-
+    @OneToMany(mappedBy = "department")
+    private List<Employee> employees;
 }
